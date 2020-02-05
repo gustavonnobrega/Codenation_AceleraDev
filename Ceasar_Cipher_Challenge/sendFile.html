@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title> CodeNation AceleraDev C#: Send answer.json
+      </title>
+    </head>
+  
+    <body>
+      <p>Select the answer.json file to send through a POST Request.</p>
+      <p>Destiny URL: https://api.codenation.dev/v1/challenge/dev-ps/submit-solution?token=428eb71b9c491557659061f1414b7a5cc72ec172</p>
+      <br>      
+      <form action=https://api.codenation.dev/v1/challenge/dev-ps/submit-solution?token=428eb71b9c491557659061f1414b7a5cc72ec172 method="post" enctype="multipart/form-data">
+      <!-- First name: <input type="text" name="fname"><br>-->
+        <input type="file" name="answer" />
+        <input type="submit" value="Send File" />
+      </form>
+    </body>
+</html>
