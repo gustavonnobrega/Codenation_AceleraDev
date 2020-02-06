@@ -11,7 +11,7 @@ Solving this Challenge is the first step to apply to the Acceleration programs i
 The Caesar Cipher Algorithm is an example of a Substitution Cipher, in which each letter of a text is switched by another, located a designated number of steps downward the alphabet sequence.
 This algorithm is named after Caesar because of its use in communications between the Roman Emperor and his Generals.
 
-**Examples:**
+	**Examples:**
 
 	Normal:  ABCDEFGHIJKLMNOPQRSTUVWXYZ
 	Ciphered: DEFGHIJKLMNOPQRSTUVWXYZABC, with a designated number of 3
@@ -36,7 +36,7 @@ The current Challenge requests the prospective student to perform three steps, d
 
 2. 2nd Step: Decipher the ciphered text snippet and evaluate its Hash Value using any SHA-1 or library available in yout target programming language. Update the JSON object with the obtained results and save it in a file named "answer.json".
 
-**Example:** JSON object received on 1st Step
+	**Example:** JSON object received on 1st Step
 
 	{
 		"numero_casas": 10,
@@ -71,7 +71,7 @@ My solution is divided in two parts:
 
 **1. Javascript - Functions Defined and Imported:** 
 	
-	**1. Step 01: Getting the initial JSON String:**
+	* Step 01: Getting the initial JSON String:
 	
 	The GET Request was made to the URL using the xmhlhttprequest module.
 	
@@ -79,7 +79,8 @@ My solution is divided in two parts:
 	
     ```javascript xhttp.open("GET", url, false); // Select false for a synchronous request ```
 	
-	**2. Step 02: Deciphering the Ciphered Message:**
+	* Step 02: Deciphering the Ciphered Message:
+	
 	
 	The Deciphering function was based on the positions of the letters on the ASCII Table.
 	
@@ -89,13 +90,15 @@ My solution is divided in two parts:
 	
 	Special attention is given when the Cipher_number causes the letter to cross from (a) to (z).
 	
-	**3. Step 03: Evaluating the SHA-1 HASH function:**
+	
+	* Step 03: Evaluating the SHA-1 HASH function:
 	
 	The SHA-1 HASH function algorithm was imported from http://webtoolkit.info/ .
 	
 	The website also provides a service to evaluate the HASH after pasting the Text_To_Be_Hashed, useful to double check if your imported library is evaluating the HASH correctly.
 	
-	**4. Step 04: Saving the final JSON into an answer.json File**
+	
+	* Step 04: Saving the final JSON into an answer.json File
 	
 	The Save_File functionality was achieved by the simplest form: by running the output of the code into an "answer.json" file. 
 	
