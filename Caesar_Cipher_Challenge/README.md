@@ -11,7 +11,8 @@ Solving this Challenge is the first step to apply to the Acceleration programs i
 The Caesar Cipher Algorithm is an example of a Substitution Cipher, in which each letter of a text is switched by another, located a designated number of steps downward the alphabet sequence.
 This algorithm is named after Caesar because of its use in communications between the Roman Emperor and his Generals.
 
-Examples:
+**Examples:**
+
 	Normal:  ABCDEFGHIJKLMNOPQRSTUVWXYZ
 	Ciphered: DEFGHIJKLMNOPQRSTUVWXYZABC, with a designated number of 3
 
@@ -30,11 +31,13 @@ The current Challenge requests the prospective student to perform three steps, d
 1. 1st Step: Write a program, in any programming language, that performs an HTTP Request to the URL below and captures a JSON object to be processed further.
 
 	URL: https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=SEU_TOKEN
+	
 	Obs: You must personalize the URL with your TOKEN, available at the Codenation website's profile page.
 
 2. 2nd Step: Decipher the ciphered text snippet and evaluate its Hash Value using any SHA-1 or library available in yout target programming language. Update the JSON object with the obtained results and save it in a file named "answer.json".
 
-Example: JSON object received on 1st Step
+**Example:** JSON object received on 1st Step
+
 	{
 		"numero_casas": 10,
 		"token":"token_do_usuario",
@@ -46,9 +49,11 @@ Example: JSON object received on 1st Step
 3. 3rd Step: Submit your answer.json file to the Challenge API, located in a target URL, using a POST Request.  
 
 	Target URL: https://api.codenation.dev/v1/challenge/dev-ps/submit-solution?token=SEU_TOKEN
+
 	Obs: You must personalize the URL with your TOKEN, available at the Codenation website's profile page.
 
-	About the API:
+	**About the API:**
+
 	The API is waiting for a file to be sent as a "multipart/form-data", as if it was sent by an "HTML form", with a "type file" field named "answer". Consider this while sending the file.
 
 ### References on Codenation Website:
@@ -61,30 +66,36 @@ https://www.codenation.dev/aceleradev/csharp-sp-2/challenge/dev-ps
 My solution is divided in two parts:
 
 * The first, written in JavaScript, obtains and processes the JSON object (by deciphering and evaluating the SHA-1 HASH) and saves the final file as answer.json.
+
 * The second, written in HTML, sends the answer.json file to the Target URL, according to the restrictions defined by the listening API.
 
-1. Javascript - Functions Defined and Imported: 
+**1. Javascript - Functions Defined and Imported:** 
 	
-	1. Step 01: Getting the initial JSON String:
+	**1. Step 01: Getting the initial JSON String:**
 	
 	The GET Request was made to the URL using the xmhlhttprequest module.
+	
 	If not previously installed, run prior to the code execution: npm install xmlhttprequest
+	
     ```javascript xhttp.open("GET", url, false); // Select false for a synchronous request ```
 	
-	2. Step 02: Deciphering the Ciphered Message:
+	**2. Step 02: Deciphering the Ciphered Message:**
 	
 	The Deciphering function was based on the positions of the letters on the ASCII Table.
 	
 	Each letter of the Ciphered Text string is evaluated if it's a number or symbol first.
+	
 	If it's a letter, it's switched by the letter in Position[ ASCII(Original_Letter) - Cipher_Number ].
+	
 	Special attention is given when the Cipher_number causes the letter to cross from (a) to (z).
 	
-	3. Step 03: Evaluating the SHA-1 HASH function:
+	**3. Step 03: Evaluating the SHA-1 HASH function:**
 	
 	The SHA-1 HASH function algorithm was imported from http://webtoolkit.info/ .
+	
 	The website also provides a service to evaluate the HASH after pasting the Text_To_Be_Hashed, useful to double check if your imported library is evaluating the HASH correctly.
 	
-	4. Step 04: Saving the final JSON into an answer.json File
+	**4. Step 04: Saving the final JSON into an answer.json File**
 	
 	The Save_File functionality was achieved by the simplest form: by running the output of the code into an "answer.json" file. 
 	
@@ -101,7 +112,7 @@ My solution is divided in two parts:
 		}
 
 
-2. HTML - The Sending File Form: 
+**2. HTML - The Sending File Form:** 
 
 In order to properly communicate with the API, the HTML form has to be configured in a specific manner, embracing all the guidelines priorly stated:
 
@@ -120,6 +131,7 @@ In order to properly communicate with the API, the HTML form has to be configure
 
 ## Target & Obtained Score:
 Challenge Completion and Target Score of 100% are mandatory to proceed to the interviews.
+
 My Obtained Score: 100%
 
 ## Contacts: 
