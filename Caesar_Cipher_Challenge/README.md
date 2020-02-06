@@ -71,7 +71,7 @@ My solution is divided in two parts:
 
 **1. Javascript - Functions Defined and Imported:** 
 	
-	* Step 01: Getting the initial JSON String:
+* Step 01: Getting the initial JSON String:
 	
 	The GET Request was made to the URL using the xmhlhttprequest module.
 	
@@ -79,7 +79,7 @@ My solution is divided in two parts:
 	
     ```javascript xhttp.open("GET", url, false); // Select false for a synchronous request ```
 	
-	* Step 02: Deciphering the Ciphered Message:
+* Step 02: Deciphering the Ciphered Message:
 	
 	
 	The Deciphering function was based on the positions of the letters on the ASCII Table.
@@ -91,14 +91,14 @@ My solution is divided in two parts:
 	Special attention is given when the Cipher_number causes the letter to cross from (a) to (z).
 	
 	
-	* Step 03: Evaluating the SHA-1 HASH function:
+* Step 03: Evaluating the SHA-1 HASH function:
 	
 	The SHA-1 HASH function algorithm was imported from http://webtoolkit.info/ .
 	
 	The website also provides a service to evaluate the HASH after pasting the Text_To_Be_Hashed, useful to double check if your imported library is evaluating the HASH correctly.
 	
 	
-	* Step 04: Saving the final JSON into an answer.json File
+* Step 04: Saving the final JSON into an answer.json File
 	
 	The Save_File functionality was achieved by the simplest form: by running the output of the code into an "answer.json" file. 
 	
